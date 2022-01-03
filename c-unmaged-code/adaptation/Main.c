@@ -21,6 +21,8 @@ int main(void)
 
     print_string(str);
     printf("%c\n", str[0]);
+    printf("string addr: %s\n", str);
+    printf("string addr: %p\n", str);
 
     printf("\n");
     printf("Before bubble sort!\n");
