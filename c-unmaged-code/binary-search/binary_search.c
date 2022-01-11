@@ -9,8 +9,8 @@ int binary_search(int* nums, size_t num_len, int target)
     int mid = (start + end) / 2;
     
     printf("First value of nums: %d\n", nums[0]);
-    printf("Address of nums: %x\n", nums);
-    printf("Address of next num_p: %x\n", ++num_p);
+    printf("Address of nums: %p\n", (void*)nums);
+    printf("Address of next num_p: %p\n", (void*)++num_p);
 
     while (start <= end) {
         printf("num[mid]: %d\n", num_p[mid]);
