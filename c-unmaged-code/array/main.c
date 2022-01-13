@@ -7,8 +7,7 @@ void set_arr(void);
 int main(void)
 {
     
-    size_t i;
-    size_t k;
+    size_t i, k;
 
     set_arr();
     for (i = 0; i < 20; ++i) {
