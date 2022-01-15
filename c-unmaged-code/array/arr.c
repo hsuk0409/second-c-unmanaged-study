@@ -31,3 +31,21 @@ void set_arr(void)
         }
     }
 }
+
+void fill_all_row(const size_t row)
+{
+    size_t i;
+
+    for (i = 0; i < 20; ++i) {
+        arrArr[row][i] = 1;
+    }
+}
+
+void fill_all_column(const size_t col)
+{
+    size_t i;
+
+    for (i = 0; i < 20; ++i) {
+        arrArr[i][col] = 1;
+    }
+}
