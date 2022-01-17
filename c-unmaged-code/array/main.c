@@ -3,6 +3,8 @@
 
 int main(void)
 {
+    size_t i;
+
     print_arr();
     set_arr();
     print_arr();
@@ -12,6 +14,10 @@ int main(void)
 
     fill_all_row(19);
     print_arr();
+
+    i = -1;
+    printf("%lu\n", i++);
+    printf("%lu\n", i);
 
     return 0;
 }
