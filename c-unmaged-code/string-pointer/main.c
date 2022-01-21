@@ -26,15 +26,16 @@ void reverse_string(char* str)
     --end;
 
     printf("\n");
+    printf("Start of string: %c\n", *start);
     printf("End of string: %c\n", *end);
     printf("Is equal start to end? %d\n", start == end);
 
-    while (start != end) {
+    while (start <= end) {
         tmp = *start;
+        printf("tmp:: %c\n", tmp);
         *end = *start;
         *start = tmp;
-        printf("%s\n", str);
-        if (start == end) break;
+        printf("new start:: %c\n", *start);
         ++start;
         --end;
     }
