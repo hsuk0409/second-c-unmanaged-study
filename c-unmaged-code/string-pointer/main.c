@@ -17,27 +17,19 @@ void reverse_string(char* str)
 {
     char* start = str;
     char* end = str;
-    char tmp;
 
     while (*end != '\0') {
-        printf("%c ", *end);
         ++end;
+        if (*(end + 1) == '\0') {
+            break;
+        }
     }
-    --end;
 
-    printf("\n");
-    printf("Start of string: %c\n", *start);
-    printf("End of string: %c\n", *end);
-    printf("Is equal start to end? %d\n", start == end);
-
-    while (start <= end) {
-        tmp = *start;
-        printf("tmp:: %c\n", tmp);
-        *end = *start;
-        *start = tmp;
-        printf("new start:: %c\n", *start);
+    while (start < end) {
+        char tmp = *start;
+        *start = *end;
+        *end = tmp;
         ++start;
         --end;
     }
-    printf("Final tmp_str:: %s\n", str);
 }
