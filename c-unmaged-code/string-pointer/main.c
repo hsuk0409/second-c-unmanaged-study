@@ -1,19 +1,25 @@
 #include <stdio.h>
+#include <string.h>
 
-void reverse_string(char* str);
+void reverse_string(const char* str);
+int compare_pointer(const char* str1, const char* str2);
 
 int main(void)
 {
     char* tmp_str = "Hi, my name is justin!";
-    char tmp_str2[25] = "Hi, my name is justin!";
-    reverse_string(tmp_str2);
+    char str_cpy[23];
+
+    strncpy(str_cpy, tmp_str, 22);
+    str_cpy[22] = '\0';
+    
+    reverse_string(str_cpy);
     printf("111 Reversed string: %s\n", tmp_str);
-    printf("222 Reversed string: %s\n", tmp_str2);
+    printf("222 Reversed string: %s\n", str_cpy);
 
     return 0;
 }
 
-void reverse_string(char* str)
+void reverse_string(const char* str)
 {
     char* start = str;
     char* end = str;
@@ -32,4 +38,9 @@ void reverse_string(char* str)
         ++start;
         --end;
     }
+}
+
+int compare_pointer(const char* str1, const char* str2)
+{
+    return -1;
 }
