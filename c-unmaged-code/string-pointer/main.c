@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include "my_string_study.h"
 
-void reverse_string(const char* str);
-int compare_pointer(const char* str1, const char* str2);
+void reverse_string(char* str);
+int compare_pointer(char* str);
 
 int main(void)
 {
@@ -11,36 +12,31 @@ int main(void)
 
     strncpy(str_cpy, tmp_str, 22);
     str_cpy[22] = '\0';
-    
+    printf("%s\n", str_cpy);
+
     reverse_string(str_cpy);
     printf("111 Reversed string: %s\n", tmp_str);
     printf("222 Reversed string: %s\n", str_cpy);
 
+    compare_pointer(str_cpy);
+
     return 0;
 }
 
-void reverse_string(const char* str)
+int compare_pointer(char* str)
 {
-    char* start = str;
-    char* end = str;
+    char* str_p1 = str;
+    char* str_p2 = str;
+    size_t i;
 
-    while (*end != '\0') {
-        ++end;
-        if (*(end + 1) == '\0') {
-            break;
-        }
+    for (i = 0; i < 3; ++i) {
+        ++str_p2;
     }
 
-    while (start < end) {
-        char tmp = *start;
-        *start = *end;
-        *end = tmp;
-        ++start;
-        --end;
-    }
-}
+    printf("str1:: %s\n", str_p1);
+    printf("str2:: %s\n", str_p2);
+    printf("str2 - str1:: %ld\n", str_p2 - str_p1);
+    printf("str1 - str2:: %ld\n", str_p1 - str_p2);
 
-int compare_pointer(const char* str1, const char* str2)
-{
     return -1;
 }
