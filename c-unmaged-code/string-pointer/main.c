@@ -37,6 +37,7 @@ int compare_pointer(char* str)
     printf("str2:: %s\n", str_p2);
     printf("str2 - str1:: %ld\n", str_p2 - str_p1);
     printf("str1 - str2:: %ld\n", str_p1 - str_p2);
+    printf("str1 + 3 == str2:: %d\n", str_p1 + 3 == str_p2);
 
     return -1;
 }
