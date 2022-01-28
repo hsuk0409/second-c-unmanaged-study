@@ -10,9 +10,14 @@ int main(void)
     char* tmp_str = "Hi, my name is justin!";
     char str_cpy[23];
 
+    printf("String pointer size:: %lu\n", sizeof(tmp_str));
+    printf("String array size:: %lu\n", sizeof(str_cpy));
+
     strncpy(str_cpy, tmp_str, 22);
     str_cpy[22] = '\0';
-    printf("%s\n", str_cpy);
+    printf("Copy string pointer to string array:: %s\n", str_cpy);
+    printf("String pointer size:: %lu\n", sizeof(tmp_str));
+    printf("String array size:: %lu\n", sizeof(str_cpy));
 
     reverse_string(str_cpy);
     printf("111 Reversed string: %s\n", tmp_str);
