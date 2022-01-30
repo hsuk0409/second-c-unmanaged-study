@@ -10,6 +10,18 @@ int main(void)
     char* tmp_str = "Hi, my name is justin!";
     char str_cpy[23];
 
+    {
+        const char* mult_delim = " ,!";
+        char str_strtok[] = "!,I    am  a boy,  and    you   are a   girl!";
+        char* token = strtok(str_strtok, mult_delim);
+
+        while (token != NULL) {
+            printf("%s\n", token);
+            token = strtok(NULL, mult_delim);
+        }
+
+    }
+
     printf("String pointer size:: %lu\n", sizeof(tmp_str));
     printf("String array size:: %lu\n", sizeof(str_cpy));
 
