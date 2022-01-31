@@ -21,3 +21,14 @@ void reverse_string(char* str)
         --end;
     }
 }
+
+size_t strlength(char* str)
+{
+    size_t size = 0;
+
+    while (*str++ != '\0') {
+        ++size;
+    }
+
+    return size;
+}

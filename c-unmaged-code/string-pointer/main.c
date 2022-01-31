@@ -13,8 +13,11 @@ int main(void)
     {
         const char* mult_delim = " ,!";
         char str_strtok[] = "!,I    am  a boy,  and    you   are a   girl!";
+        char* str = "!,I    am  a boy,  and    you   are a   girl!";
+        char* last_ptr = str + strlength(str) - 1;
         char* token = strtok(str_strtok, mult_delim);
 
+        printf("Last char:: %c\n", *last_ptr);
         while (token != NULL) {
             printf("%s\n", token);
             token = strtok(NULL, mult_delim);
