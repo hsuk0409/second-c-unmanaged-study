@@ -34,8 +34,16 @@ int main(void)
             "Name: ",
             "Justin!"
         };
+        char str1[] = "Char array1";
+        char* ptr_str2 = "Char array2";
 
         print_arr(arr);
+
+        printf("String array sizeof:: %lu\n", sizeof(str1));
+        printf("String array address:: %p\n", (void*)&str1);
+
+        printf("String pointer sizeof:: %lu\n", sizeof(ptr_str2));
+        printf("String pointer address:: %p\n", (void*)&ptr_str2);
     }
 
     return 0;
