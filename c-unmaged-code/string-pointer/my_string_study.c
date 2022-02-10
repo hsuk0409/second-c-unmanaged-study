@@ -22,7 +22,7 @@ void reverse_string(char* str)
     }
 }
 
-size_t strlength(char* str)
+size_t strlength(const char* str)
 {
     size_t size = 0;
 
@@ -31,4 +31,18 @@ size_t strlength(char* str)
     }
 
     return size;
+}
+
+size_t strlen_using_pointer(const char* str)
+{
+    const char* p = str;
+    size_t result = 0;
+
+    while (*p++ != '\0') {
+    }
+
+    result = p - str;
+    printf("String length using pointer:: %lu\n", result);
+
+    return result - 1;
 }

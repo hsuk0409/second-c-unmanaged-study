@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
+
 #include "my_string_study.h"
 
 void reverse_string(char* str);
@@ -13,8 +15,8 @@ int main(void)
     {
         const char* mult_delim = " ,!";
         char str_strtok[] = "!,I    am  a boy,  and    you   are a   girl!";
-        char* str = "!,I    am  a boy,  and    you   are a   girl!";
-        char* last_ptr = str + strlength(str) - 1;
+        const char* str = "!,I    am  a boy,  and    you   are a   girl!";
+        char* last_ptr = (char*)str + strlength(str) - 1;
         char* token = strtok(str_strtok, mult_delim);
 
         printf("Last char:: %c\n", *last_ptr);
@@ -23,6 +25,16 @@ int main(void)
             token = strtok(NULL, mult_delim);
         }
 
+    }
+
+    {
+        const char* str = "aaaaa";
+        size_t str1_len = strlength(str);
+        size_t str2_len = strlen_using_pointer(str);
+
+        printf("String1 length:: %lu\n", str1_len);
+        printf("String2 length:: %lu\n", str2_len);
+        assert(str1_len == str2_len);
     }
 
     printf("String pointer size:: %lu\n", sizeof(tmp_str));
