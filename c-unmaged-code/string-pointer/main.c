@@ -37,6 +37,15 @@ int main(void)
         assert(str1_len == str2_len);
     }
 
+    {
+        char str[] = "Tmp_v1";
+        char* token;
+
+        token = strtok(str, "_");
+
+        printf("Token:: %s\n", token);
+    }
+
     printf("String pointer size:: %lu\n", sizeof(tmp_str));
     printf("String array size:: %lu\n", sizeof(str_cpy));
 
