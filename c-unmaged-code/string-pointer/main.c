@@ -38,6 +38,14 @@ int main(void)
     }
 
     {
+        const char* str1 = "abcd";
+        const char* str2 = "abce";
+
+        printf("String compare result1:: %d\n", strcmp(str1, str2));
+        printf("String compare result2:: %d\n", strcmp(str1, str1));
+    }
+
+    {
         char str[] = "Tmp_v1";
         char* token;
 
